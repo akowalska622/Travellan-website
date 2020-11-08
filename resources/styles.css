@@ -115,7 +115,8 @@ h1 {
 h1 span {
   color: #FF8C00;
   opacity: 0.5;
-  animation: h1-animation 2.5s linear 2s;
+  animation: h1-animation 2.5s linear .9s;
+  animation-fill-mode: backwards;
 }
 
 h2 {
