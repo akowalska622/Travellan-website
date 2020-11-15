@@ -1,0 +1,209 @@
+@import "abstract/functions";
+@import "abstract/mixins";
+@import "abstract/variables";
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+
+@import "layout/grid";
+@import "layout/header";
+
+@import "pages/home";
+
+
+/* orange color: #FF8C00 */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  color: #d0d0d0;
+}
+
+.clearfix {
+  zoom: 1;
+}
+.clearfix:after {
+  content: ".";
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+/* ----------------- */
+/* HEADER */
+/* ----------------- */
+
+header {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 3rem;
+  padding: 1rem;
+  font-size: 2.3rem;
+  letter-spacing: 0.3rem;
+}
+
+nav ul {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+nav li {
+  position: relative;
+  display: inline-block;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+  padding-bottom: 0.6rem;
+  border-bottom: 0.2rem solid transparent;
+}
+
+nav a:hover {
+  color: #FF8C00;
+  transition: all 0.7s;
+}
+
+nav li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.5rem;
+  background-color: #FF8C00;
+  width: 100%;
+  height: 0.2rem;
+  margin-top: 0.3rem;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+nav li:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.hero-textbox {
+  letter-spacing: 0.3rem;
+}
+
+h1 {
+  margin-bottom: 2rem;
+  font-size: 8rem;
+  font-weight: 300;
+}
+
+h1 span {
+  color: #FF8C00;
+  opacity: 0.5;
+  animation: h1-animation 2.5s linear .7s;
+  animation-fill-mode: backwards;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 400;
+  text-align: center;
+  transition: letter-spacing 1s;
+}
+
+.hero-textbox:hover h2,
+.hero-textbox:active h2 {
+  letter-spacing: 1.5rem;
+}
+
+@keyframes h1-animation {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.logo img {
+  position: absolute;
+  width: 10rem;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 15%;
+}
+
+.features {
+  height: 100%;
+  background: linear-gradient(to bottom right, #353d3f, #16191a);
+}
+
+h3 {
+  font-weight: 300;
+  text-align: center;
+  padding: 5rem;
+  font-size: 5rem;
+}
+
+.features-box {
+  width: 90%;
+  margin-left: 5%;
+  line-height: 150%;
+  font-size: 110%;
+}
+
+.box {
+  padding: 1rem 1.5rem 0 1.5rem;
+}
+
+.title {
+  font-size: 3.5rem;
+  color: #FF8C00;
+  font-weight: 300;
+}
+
+ion-icon {
+  margin-right: 2rem;
+  font-size: 4rem;
+}
+
+.photos {
+  width: 100%;
+}
